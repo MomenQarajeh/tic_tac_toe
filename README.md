@@ -2,6 +2,18 @@ Tic Tac Toe Game
 
 A simple Tic Tac Toe game implemented in Dart. This program allows two players to take turns and play Tic Tac Toe in the terminal. The game validates user input and checks for a winner or a draw after each move.
 
+Running the Game
+
+1-Clone the repository or download the script.
+
+2-Open a terminal and navigate to the directory containing the script.
+
+3-Run the game with the following command:
+
+    dart run tic_tac_toe.dart
+
+Follow the on-screen instructions to play.
+
 How It Works
 
 The game is played on a 3x3 grid, represented by the numbers 1 to 9. Players take turns placing their symbol ("X" or "O") in an empty spot on the grid. The goal is to get three of your symbols in a row, column, or diagonal before your opponent does.
