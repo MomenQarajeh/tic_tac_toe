@@ -4,7 +4,10 @@ bool winner = false;
 bool isXtern = true;
 int moveCount = 0;
 
+// List to represent the Tic-Tac-Toe grid
 List<String> values = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+// List of winning combinations (represented by indices of the 'values' list)
 List<String> combinations = [
   '012',
   '048',
@@ -16,11 +19,13 @@ List<String> combinations = [
   '678'
 ];
 
+// Checks if a given combination of positions on the board contains the specified player's symbol
 bool checkCombination(String combination, String checkFor) {
   List<int> numbers = combination.split('').map(int.parse).toList();
   return numbers.every((index) => values[index] == checkFor);
 }
 
+// Checks if any of the winning combinations have been achieved by the given player
 void checkWinner(String player) {
   for (final combination in combinations) {
     if (checkCombination(combination, player)) {
@@ -47,6 +52,7 @@ void clearScreen() {
   }
 }
 
+// Handles user input for the next move, validates input, and updates the game state
 void getNextCharacter() {
   while (true) {
     print('Choose a number for ${isXtern ? "X" : "O"} (1-9):');
@@ -74,7 +80,7 @@ void getNextCharacter() {
       print('This spot is already taken. Choose another number.');
       continue;
     }
-
+    // Update the grid with the player's move
     values[index] = isXtern ? 'X' : 'O';
     isXtern = !isXtern;
     moveCount++;
@@ -92,6 +98,7 @@ void getNextCharacter() {
   }
 }
 
+// Main function to start the game
 void main() {
   generateGrid();
   while (!winner) {
